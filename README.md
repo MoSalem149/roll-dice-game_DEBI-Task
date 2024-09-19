@@ -71,4 +71,4 @@ To get a local copy up and running, follow these simple steps:
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/MoSalem149v2/roll-dice-game_DEBI-Task.git
+   git clone https://github.com/MoSalem149/roll-dice-game_DEBI-Task.git
