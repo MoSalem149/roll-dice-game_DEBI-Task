@@ -1,0 +1,246 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Oswald:wght@200..700&family=Poppins:wght@500;800&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  height: 100vh;
+  color: #333;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* Updated to a clean gradient background */
+  background: linear-gradient(135deg, #6a82fb, #fc5c7d);
+}
+
+.container {
+  position: relative;
+  width: 100rem;
+  height: 60rem;
+  background-color: rgba(255, 255, 255, 0.15);
+  box-shadow: 0 3rem 5rem rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  overflow: hidden;
+  display: flex;
+  backdrop-filter: blur(15px);
+}
+
+.message-box {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 3rem;
+  border-radius: 1rem;
+  text-align: center;
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.1);
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.message-content {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.message-box h2 {
+  font-size: 3rem;
+  margin-bottom: 1.5rem;
+}
+
+.message-box p {
+  font-size: 1.6rem;
+  margin-bottom: 2rem;
+}
+
+.message-box .btn {
+  margin-top: 2rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+}
+
+.btn {
+  color: #444;
+  background: none;
+  border: none;
+  font-family: inherit;
+  font-size: 1.8rem;
+  text-transform: uppercase;
+  cursor: pointer;
+  font-weight: 400;
+  transition: all 0.2s;
+  background-color: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(10px);
+  padding: 0.7rem 1.5rem;
+  border-radius: 50rem;
+  box-shadow: 0 1.75rem 3.5rem rgba(0, 0, 0, 0.1);
+}
+
+.btn::first-letter {
+  font-size: 2.4rem;
+  display: inline-block;
+  margin-right: 0.7rem;
+}
+
+.btn-roll,
+.btn-hold {
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.btn-roll:active,
+.btn-hold:active {
+  transform: translate(-50%, 3px);
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.15);
+}
+
+.btn-roll:focus,
+.btn-hold:focus {
+  outline: none;
+}
+
+.player-names {
+  margin-top: 2rem;
+}
+
+.player-names input {
+  font-size: 1.6rem;
+  padding: 0.5rem;
+  margin: 0.5rem 0;
+  width: 100%;
+}
+
+.player-names .btn-set-names {
+  margin-top: 1rem;
+}
+
+.player {
+  flex: 50%;
+  padding: 9rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: all 0.75s;
+}
+
+.name {
+  position: relative;
+  font-size: 4rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  word-spacing: 2px;
+  font-weight: 300;
+  margin-bottom: 1rem;
+}
+
+.score {
+  font-size: 8rem;
+  font-weight: 300;
+  color: #2196f3;
+  margin-bottom: auto;
+}
+
+.player-active {
+  background-color: #f0f0f5;
+}
+
+.player-active .name {
+  font-weight: 700;
+}
+
+.player-active .score {
+  font-weight: 400;
+}
+
+.player-active .current {
+  opacity: 1;
+}
+
+.current {
+  background-color: #2196f3;
+  opacity: 0.9;
+  border-radius: 10px;
+  color: #fff;
+  width: 65%;
+  padding: 2rem;
+  text-align: center;
+  transition: all 0.75s;
+}
+
+.current-label {
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+  font-size: 1.7rem;
+  color: #ddd;
+}
+
+.current-score {
+  font-size: 3.5rem;
+}
+
+.btn-roll {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 39.3rem;
+}
+
+.btn-hold {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 46.1rem;
+}
+
+.dice {
+  position: absolute;
+  left: 50%;
+  top: 16.5rem;
+  transform: translateX(-50%);
+  height: 10rem;
+  box-shadow: 0 2rem 5rem rgba(0, 0, 0, 0.1);
+  animation: diceBounce 2s ease-in-out infinite;
+}
+
+@keyframes diceBounce {
+  0% {
+    transform: translate(-50%, 0);
+  }
+
+  50% {
+    transform: translate(-50%, -10px);
+  }
+
+  100% {
+    transform: translate(-50%, 0);
+  }
+}
+
+.player-winner {
+  background-color: #b2d8b2;
+}
+
+.player-winner .name {
+  font-weight: 700;
+  color: #2196f3;
+}
+
+.hidden {
+  display: none;
+}
